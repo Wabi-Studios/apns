@@ -4,8 +4,8 @@ import PackageDescription
 let package = Package(
     name: "apns",
     platforms: [
-       .macOS(.v12),
-       .iOS(.v15)
+      .iOS(.v13),
+      .macOS(.v10_15),
     ],
     products: [
         .library(name: "APNS", targets: ["APNS"]),
