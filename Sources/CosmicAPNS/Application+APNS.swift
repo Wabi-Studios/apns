@@ -1,5 +1,6 @@
-import APNSwift
+import APNS
 import Vapor
+import NIOConcurrencyHelpers
 
 extension Application {
     public var apns: CosmicAPNS {
@@ -9,7 +10,7 @@ extension Application {
     public struct CosmicAPNS {
 
         // Synchronize access across threads.
-        private var lock: Lock
+        private var lock: NIOLock
 
         struct ContainersKey: StorageKey, LockKey {
             typealias Value = APNSContainers

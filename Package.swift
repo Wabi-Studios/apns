@@ -1,11 +1,11 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
     name: "apns",
     platforms: [
       .iOS(.v13),
-      .macOS(.v10_15),
+      .macOS(.v13),
     ],
     products: [
         .library(name: "CosmicAPNS", targets: ["CosmicAPNS"]),
@@ -16,7 +16,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "CosmicAPNS", dependencies: [
-            .product(name: "APNSwift", package: "apnswift"),
+            .product(name: "APNS", package: "apnswift"),
             .product(name: "Vapor", package: "vapor"),
         ]),
         .testTarget(name: "CosmicAPNSTests", dependencies: [
