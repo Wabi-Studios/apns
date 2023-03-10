@@ -2,11 +2,11 @@ import APNSwift
 import Vapor
 
 extension Application {
-    public var apns: APNS {
+    public var apns: CosmicAPNS {
         return .init(application: self)
     }
 
-    public struct APNS {
+    public struct CosmicAPNS {
 
         // Synchronize access across threads.
         private var lock: Lock
@@ -32,14 +32,14 @@ extension Application {
 
         public var client: APNSGenericClient {
             guard let container = containers.container() else {
-                fatalError("No default APNS container configured.")
+                fatalError("No default CosmicAPNS container configured.")
             }
             return container.client
         }
 
         public func client(_ id: APNSContainers.ID = .default) -> APNSGenericClient {
             guard let container = containers.container(for: id) else {
-                fatalError("No APNS container for \(id).")
+                fatalError("No CosmicAPNS container for \(id).")
             }
             return container.client
         }

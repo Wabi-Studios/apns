@@ -39,7 +39,7 @@ public class APNSContainers {
                 try container.client.syncShutdown()
             }
         } catch {
-            fatalError("Could not shutdown APNS Containers")
+            fatalError("Could not shutdown CosmicAPNS Containers")
         }
     }
 }

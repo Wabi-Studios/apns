@@ -1,4 +1,4 @@
-import APNS
+import CosmicAPNS
 import XCTVapor
 
 class APNSTests: XCTestCase {
