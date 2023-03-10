@@ -1,7 +1,7 @@
 import CosmicAPNS
 import XCTVapor
 
-class APNSTests: XCTestCase {
+class CosmicAPNSTests: XCTestCase {
     struct Payload: Codable {}
     let appleECP8PrivateKey = """
     -----BEGIN PRIVATE KEY-----
